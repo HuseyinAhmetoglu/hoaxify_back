@@ -19,6 +19,7 @@ public class User {
     @NotNull
     @NotBlank
     @Size(min = 4, max = 20)
+    @UniqueUsername
     private String username;
 
     @NotNull
