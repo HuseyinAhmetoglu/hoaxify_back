@@ -16,21 +16,21 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long Id;
 
-    @NotNull
-    @NotBlank
-    @Size(min = 4, max = 20)
-    @UniqueUsername
+    @NotNull(message = "{hoaxify.validation.constraints.username.NotNull.message}")
+    @NotBlank(message = "{hoaxify.validation.constraints.username.NotNull.message}")
+    @Size(min = 4, max = 20, message = "{hoaxify.validation.constraints.display.Size.message}")
+    @UniqueUsername(message = "{hoaxify.validation.constraints.display.Unique.message}")
     private String username;
 
-    @NotNull
-    @NotBlank
-    @Size(min = 4, max = 20)
+    @NotNull(message = "{hoaxify.validation.constraints.display.NotNull.message}")
+    @NotBlank(message = "{hoaxify.validation.constraints.display.NotNull.message}")
+    @Size(min = 4, max = 20, message = "{hoaxify.validation.constraints.display.Size.message}")
     private String displayName;
 
-    @NotNull
-    @NotBlank
-    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).*$")
-    @Size(min = 8)
+    @NotNull(message = "{hoaxify.validation.constraints.password.NotNull.message}")
+    @NotBlank(message = "{hoaxify.validation.constraints.password.NotNull.message}")
+    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).*$", message = "{hoaxify.validation.constraints.password.Pattern.message}")
+    @Size(min = 4, max = 20, message = "{hoaxify.validation.constraints.display.Size.message}")
     private String password;
 
 }
