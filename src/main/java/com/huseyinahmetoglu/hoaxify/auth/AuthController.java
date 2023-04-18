@@ -6,7 +6,6 @@ import com.huseyinahmetoglu.hoaxify.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -19,7 +18,7 @@ import java.util.Base64;
 public class AuthController {
 
     private final UserRepository userRepository;
-    private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    private final PasswordEncoder passwordEncoder;
 
 
     @PostMapping("/api/1.0/auth")
@@ -43,6 +42,8 @@ public class AuthController {
             ApiError apiError = new ApiError(401, "Unauthorized request!", "/api/1.0/auth");
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(apiError);
         }
+
+
         return ResponseEntity.ok().build();
     }
 }

@@ -33,4 +33,6 @@ public class User {
     @Size(min = 4, max = 20, message = "{hoaxify.validation.constraints.display.Size.message}")
     private String password;
 
+    private String image;
+
 }
