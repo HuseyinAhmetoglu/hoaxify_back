@@ -15,11 +15,13 @@ public class HoaxifyApplication {
 //        return new CommandLineRunner() {
 //            @Override
 //            public void run(String... args) throws Exception {
-//                User user = new User();
-//                user.setUsername("user1");
-//                user.setPassword("P4ssword");
-//                user.setDisplayName("display1");
-//                userService.save(user);
+//                for (int i = 0; i < 50; i++) {
+//                    User user = new User();
+//                    user.setUsername("user" + i);
+//                    user.setPassword("Parola123");
+//                    user.setDisplayName("display" + i);
+//                    userService.save(user);
+//                }
 //            }
 //        };
 //    }
